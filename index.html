@@ -3,20 +3,115 @@
 <html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>الحصن سوفت - تحميل البرنامج</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة الحصن سوفت - تحميل النظام</title>
+    <!-- استدعاء خط عربي جميل -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Tahoma, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f7f6; }
-        .container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; }
-        h1 { color: #0d3b66; }
-        .btn { background-color: #2ecc71; color: white; padding: 15px 30px; text-decoration: none; font-size: 20px; border-radius: 5px; display: inline-block; margin-top: 20px; font-weight: bold; }
-        .btn:hover { background-color: #27ae60; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 650px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #0d3b66;
+            font-size: 26px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        h2 {
+            color: #f4a261;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(56, 239, 125, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(56, 239, 125, 0.4);
+            background: linear-gradient(135deg, #38ef7d, #11998e);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #888;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>مرحباً بكم في نظام الحصن سوفت ERP</h1>
-        <p>اضغط على الزر أدناه لتثبيت أو تحديث النظام المحاسبي على جهازك.</p>
+
+    <div class="card">
+        <div class="logo">🏢</div>
+        <h1>مرحباً بكم في شركة الحصن سوفت للحلول البرمجية والمحاسبة</h1>
+        <h2>نظام الحصن سوفت ERP</h2>
+        <p>يمكنك تحميل نظام الحصن سوفت ERP.<br>اضغط على الزر أدناه لتثبيت أو تحديث النظام المحاسبي على جهازك.</p>
+       
         <a href="setup.exe" class="btn">تحميل وتثبيت النظام المحاسبي</a>
+       
+        <div class="footer">
+            © 2026 AlhosnSoft. جميع الحقوق محفوظة.
+        </div>
     </div>
+
 </body>
 </html>
