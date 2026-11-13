@@ -1,199 +1,232 @@
 
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الحصن سوفت - تحميل النظام</title>
-    <!-- استخدام خط عربي فخم -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>تحميل النظام - شركة الحصن سوفت</title>
+    <!-- استدعاء خط Cairo من جوجل -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- استدعاء مكتبة الأيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Tajawal', sans-serif;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            /* خلفية داكنة فخمة بتدرجات لونية */
-            background: #0f172a;
+            /* لون الخلفية الأزرق الداكن مع تدرج */
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            color: #ffffff;
             overflow: hidden;
             position: relative;
-            color: #fff;
         }
 
-        /* تأثيرات الإضاءة في الخلفية */
-        .glow-orb {
+        /* تأثيرات إضاءة خلفية */
+        body::before {
+            content: '';
             position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(45, 212, 191, 0.15);
             border-radius: 50%;
-            filter: blur(80px);
-            z-index: 0;
-            animation: float 6s ease-in-out infinite;
-        }
-        .orb1 { width: 300px; height: 300px; background: rgba(16, 185, 129, 0.4); top: -10%; right: -5%; }
-        .orb2 { width: 400px; height: 400px; background: rgba(59, 130, 246, 0.3); bottom: -20%; left: -10%; animation-delay: -3s; }
-
-        @keyframes float {
-            0% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-30px) scale(1.05); }
-            100% { transform: translateY(0px) scale(1); }
+            top: -100px;
+            right: -100px;
+            filter: blur(100px);
         }
 
-        /* البطاقة الزجاجية (Glassmorphism) */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
+        body::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+            filter: blur(100px);
+        }
+
+        .container {
+            background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 24px;
             padding: 50px 40px;
-            text-align: center;
-            max-width: 650px;
             width: 90%;
-            z-index: 1;
+            max-width: 700px;
+            text-align: center;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1.2s ease-out;
+            z-index: 10;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .icon {
+        .rocket-icon {
             font-size: 50px;
-            margin-bottom: 15px;
+            color: #2dd4bf; /* لون التركواز */
+            margin-bottom: 20px;
             display: inline-block;
-            animation: pulse 2s infinite;
+            transform: rotate(-45deg);
+            animation: float 3s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(-45deg); }
+            50% { transform: translateY(-10px) rotate(-45deg); }
+            100% { transform: translateY(0) rotate(-45deg); }
         }
 
-        /* السطر الأول: مرحباً بك في */
         h1 {
             font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 10px;
-            background: linear-gradient(to left, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.4;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
         }
 
-        /* السطر الثاني: اسم الشركة */
-        h2 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #f8fafc;
-            margin-bottom: 25px;
-            line-height: 1.4;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* الكلام الذي تحت */
-        p {
-            font-size: 18px;
-            color: #94a3b8;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-
-        /* تنسيق خاص لاسم النظام ERP ليكون بارزاً */
-        .erp-name {
-            display: block;
+        .company-name {
             font-size: 22px;
-            font-weight: 900;
-            color: #38bdf8;
-            margin: 10px 0;
-            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-        }
-
-        /* الزر الفخم */
-        .btn {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 16px 45px;
-            text-decoration: none;
-            font-size: 20px;
             font-weight: 700;
-            border-radius: 50px;
-            display: inline-block;
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 25px;
+            color: #f8fafc;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.6);
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        .description {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .system-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2dd4bf;
+            margin: 15px 0 25px 0;
+        }
+
+        .action-text {
+            font-size: 14px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .download-btn {
+            background: #2dd4bf;
+            color: #0f172a;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 20px -5px rgba(45, 212, 191, 0.4);
+        }
+
+        .download-btn:hover {
+            background: #14b8a6;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -5px rgba(45, 212, 191, 0.5);
         }
 
         .features {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             margin-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .feature-item {
-            font-size: 14px;
-            color: #cbd5e1;
+        .feature {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #e2e8f0;
         }
 
+        .feature i {
+            font-size: 16px;
+        }
+
+        .icon-update { color: #4ade80; }
+        .icon-secure { color: #f87171; }
+        .icon-fast { color: #fbbf24; }
+
         .footer {
-            margin-top: 30px;
-            font-size: 13px;
+            margin-top: 40px;
+            font-size: 12px;
             color: #64748b;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 22px; }
+            .company-name { font-size: 18px; }
+            .system-name { font-size: 20px; }
+            .features { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- إضاءات الخلفية -->
-    <div class="glow-orb orb1"></div>
-    <div class="glow-orb orb2"></div>
-
-    <!-- البطاقة الرئيسية -->
-    <div class="glass-card">
-        <div class="icon">🚀</div>
-       
-        <!-- الترتيب الجديد للنصوص -->
-        <h1>مرحباً بك في...</h1>
-        <h2>شركة الحصن سوفت للحلول البرمجية والمحاسبية</h2>
-       
-        <p>
-            نقدم لك أحدث إصدار من أنظمتنا البرمجية المتكاملة
-            <span class="erp-name">نظام الحصن سوفت ERP</span>
-            اضغط على الزر أدناه لبدء التحميل والتثبيت الآمن.
-        </p>
-       
-        <!-- ⚠️ هام: غير اسم الملف setup.exe إلى اسم الملف الذي رفعته -->
-        <a href="AlhosnSoft-ERP" class="btn">تحميل وتثبيت الآن</a>
-
-        <!-- مميزات إضافية -->
-        <div class="features">
-            <div class="feature-item">✅ تحديثات تلقائية</div>
-            <div class="feature-item">🛡️ آمن ومحمي</div>
-            <div class="feature-item">⚡ أداء عالي</div>
+    <div class="container">
+        <!-- أيقونة الصاروخ -->
+        <div class="rocket-icon">
+            <i class="fa-solid fa-rocket"></i>
         </div>
 
+        <!-- الترحيب -->
+        <h1>مرحباً بك في...</h1>
+        <div class="company-name">شركة الحصن سوفت للحلول البرمجية والمحاسبية</div>
+
+        <!-- الوصف -->
+        <div class="description">
+            نقدم لك أحدث إصدار من أنظمتنا البرمجية المتكاملة
+        </div>
+
+        <!-- اسم النظام -->
+        <div class="system-name">نظام الحصن سوفت ERP</div>
+
+        <!-- نص التوجيه -->
+        <div class="action-text">
+            اضغط على الزر أدناه لبدء التحميل والتثبيت الآمن.
+        </div>
+
+        <!-- زر التحميل (يجب تعديل الرابط إلى رابط الـ setup أو الـ .application الخاص بك) -->
+        <!-- استخدمنا رابط تجريبي هنا، يرجى استبداله برابط موقعك -->
+        <a href="setup.exe" class="download-btn">تحميل وتثبيت الآن</a>
+
+        <!-- المميزات -->
+        <div class="features">
+            <div class="feature">
+                <i class="fa-solid fa-circle-check icon-update"></i>
+                تحديثات تقنية
+            </div>
+            <div class="feature">
+                <i class="fa-solid fa-shield-halved icon-secure"></i>
+                آمن ومحمي
+            </div>
+            <div class="feature">
+                <i class="fa-solid fa-bolt icon-fast"></i>
+                أداء عالي
+            </div>
+        </div>
+
+        <!-- حقوق النشر -->
         <div class="footer">
             © 2017 AlhosnSoft. جميع الحقوق محفوظة.
         </div>
