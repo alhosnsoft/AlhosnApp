@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <!-- استدعاء مكتبة الأيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   
+  
     <style>
         * {
             margin: 0;
@@ -19,7 +19,6 @@
         }
 
         body {
-            /* لون الخلفية الأزرق الداكن مع تدرج */
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             min-height: 100vh;
             display: flex;
@@ -30,7 +29,6 @@
             position: relative;
         }
 
-        /* تأثيرات إضاءة خلفية */
         body::before {
             content: '';
             position: absolute;
@@ -71,7 +69,7 @@
 
         .rocket-icon {
             font-size: 50px;
-            color: #2dd4bf; /* لون التركواز */
+            color: #2dd4bf;
             margin-bottom: 20px;
             display: inline-block;
             transform: rotate(-45deg);
@@ -184,33 +182,28 @@
 <body>
 
     <div class="container">
-        <!-- أيقونة الصاروخ -->
         <div class="rocket-icon">
             <i class="fa-solid fa-rocket"></i>
         </div>
 
-        <!-- الترحيب -->
         <h1>مرحباً بك في...</h1>
         <div class="company-name">شركة الحصن سوفت للحلول البرمجية والمحاسبية</div>
 
-        <!-- الوصف -->
         <div class="description">
             نقدم لك أحدث إصدار من أنظمتنا البرمجية المتكاملة
         </div>
 
-        <!-- اسم النظام -->
         <div class="system-name">نظام الحصن سوفت ERP</div>
 
-        <!-- نص التوجيه -->
         <div class="action-text">
-            اضغط على الزر أدناه لبدء التحميل والتثبيت الآمن/ يجب اغلاق النظام قبل التثبيت.
+            اضغط على الزر أدناه لبدء التحميل والتثبيت الآمن / يجب إغلاق النظام قبل التثبيت.
         </div>
 
-        <!-- زر التحميل (يجب تعديل الرابط إلى رابط الـ setup أو الـ .application الخاص بك) -->
-        <!-- استخدمنا رابط تجريبي هنا، يرجى استبداله برابط موقعك -->
-        <a href="AlhosnSoft_ERP_Update.exe" class="download-btn">تحميل التحديث والنثبيت الآن</a>
+        <!-- رابط التحميل المباشر للملف من GitHub -->
+        <a href="https://raw.githubusercontent.com/alhosnsoft/AlhosnApp/main/AlhosnSoft_ERP_Update.exe" class="download-btn" download>
+            تحميل التحديث والتثبيت الآن 🚀
+        </a>
 
-        <!-- المميزات -->
         <div class="features">
             <div class="feature">
                 <i class="fa-solid fa-circle-check icon-update"></i>
@@ -226,7 +219,6 @@
             </div>
         </div>
 
-        <!-- حقوق النشر -->
         <div class="footer">
             © 2017 AlhosnSoft. جميع الحقوق محفوظة.
         </div>
